@@ -1,0 +1,6 @@
+@if (userData$ | async; as data) {
+<app-user-card [userData]="data"></app-user-card>
+}
+@else {
+<p>Loading...</p>
+}

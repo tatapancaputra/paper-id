@@ -1,0 +1,23 @@
+<table>
+  <caption>
+    User list
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of userList; track item.id; let idx = $index) {
+    <tr>
+      <td><a [routerLink]="['user', item.id]">{{item.id}}</a></td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.website}}</td>
+    </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,6 @@
+@if (userList$ | async; as list) {
+<app-user-table [userList]="list"></app-user-table>
+}
+@else {
+<p>Loading...</p>
+}
