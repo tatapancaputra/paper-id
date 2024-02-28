@@ -1,22 +1,40 @@
 <article class='card fx fx-col fx-rgap-xl p-xl'>
   <div class="fx fx-row fx-cgap-xl">
-    <label class="fx txt-bold">Name</label>
-    <p class="fx txt-light">{{userData.name}}</p>
+    <label class="txt-bold">Id</label>
+    <p class="txt-light">{{userData.id}}</p>
   </div>
   <div class="fx fx-row fx-cgap-xl">
-    <label class="fx txt-bold">Username</label>
-    <p class="fx txt-light">{{userData.username}}</p>
+    <label class="txt-bold">Name</label>
+    <p class="txt-light">{{userData.name}}</p>
   </div>
   <div class="fx fx-row fx-cgap-xl">
-    <label class="fx txt-bold">Email</label>
-    <p class="fx txt-light">{{userData.email}}</p>
+    <label class="txt-bold">Username</label>
+    <p class="txt-light">{{userData.username | lowercase}}</p>
   </div>
   <div class="fx fx-row fx-cgap-xl">
-    <label class="fx txt-bold">Phone</label>
-    <p class="fx txt-light">{{userData.phone}}</p>
+    <label class="txt-bold">Email</label>
+    <p class="txt-light">{{userData.email | lowercase}}</p>
   </div>
   <div class="fx fx-row fx-cgap-xl">
-    <label class="fx txt-bold">Website</label>
-    <p class="fx txt-light">{{userData.website}}</p>
+    <label class="txt-bold">Phone</label>
+    <p class="txt-light">{{userData.phone}}</p>
+  </div>
+  <div class="fx fx-row fx-cgap-xl">
+    <label class="txt-bold">Website</label>
+    <p class="txt-light">
+      <a [href]="'https://' + userData.website" target="_blank">{{userData.website}}</a>
+    </p>
+  </div>
+  <div class="fx fx-row fx-cgap-xl">
+    <label class="txt-bold">Address</label>
+    <p class="fx fx-col fx-rgap-md txt-light">
+      <span>{{addressLine1}}</span>
+      <span>{{addressLine2}}</span>
+      <span><a [href]="pinPoint" target="_blank">Pin-point</a></span>
+    </p>
+  </div>
+  <div class="fx fx-row fx-cgap-xl">
+    <label class="txt-bold">Company</label>
+    <p class="txt-light">{{userData.company.name}}</p>
   </div>
 </article>

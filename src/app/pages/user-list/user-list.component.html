@@ -1,6 +1,9 @@
 @if (userList$ | async; as list) {
-<app-user-table [userList]="list"></app-user-table>
+<div class="fx fx-col fx-rgap-xl">
+  <h1 class="txt-center">User List</h1>
+  <app-user-table [userList]="list"></app-user-table>
+</div>
 }
 @else {
-<p>Loading...</p>
+<p class="txt-center">Loading...</p>
 }

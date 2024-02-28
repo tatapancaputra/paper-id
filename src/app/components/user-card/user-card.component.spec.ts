@@ -20,4 +20,26 @@ describe('UserCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  test('get addressLine1 should return street and suite of address separated by ", "', () => {
+    const { street, suite } = userDataMock.address;
+    const expectedResult = [street, suite].join(', ');
+
+    expect(component.addressLine1).toBe(expectedResult);
+  });
+
+  test('get addressLine2 should return city and zipcode of address separated by ", "', () => {
+    const { city, zipcode } = userDataMock.address;
+    const expectedResult = [city, zipcode].join(', ');
+
+    expect(component.addressLine2).toBe(expectedResult);
+  });
+
+  test('get pinPoint should return "https://www.google.com/maps/search/" append with lat and lng of address.geo separated by ","', () => {
+    const { lat, lng } = userDataMock.address.geo;
+    const expectedResult =
+      'https://www.google.com/maps/search/' + [lat, lng].join(',');
+
+    expect(component.pinPoint).toBe(expectedResult);
+  });
 });

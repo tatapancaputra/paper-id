@@ -1,6 +1,9 @@
 @if (userData$ | async; as data) {
-<app-user-card [userData]="data"></app-user-card>
+<div class="fx fx-col fx-rgap-xl">
+  <h1 class="txt-center">User Details</h1>
+  <app-user-card [userData]="data"></app-user-card>
+</div>
 }
 @else {
-<p>Loading...</p>
+<p class="txt-center">Loading...</p>
 }
