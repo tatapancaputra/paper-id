@@ -22,9 +22,13 @@ table {
     white-space: nowrap;
 
     &:first-child {
+      display: flex;
       position: sticky;
       left: 0;
       z-index: 1;
+
+      animation: sticky-column-shadow linear;
+      animation-timeline: scroll(inline);
     }
   }
 }
@@ -32,5 +36,17 @@ table {
 @media screen and (min-width: 641px) {
   table {
     border: 1px solid #6c757d;
+  }
+}
+
+@keyframes sticky-column-shadow {
+  0% {
+    box-shadow: none;
+  }
+  1% {
+    box-shadow: 4px 0 4px rgba(100, 100, 100, 0.3);
+  }
+  100% {
+    box-shadow: 4px 0 4px rgba(100, 100, 100, 0.3);
   }
 }
